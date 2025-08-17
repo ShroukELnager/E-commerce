@@ -1,0 +1,27 @@
+.breadcrumbs {
+    font-size: 16px;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    margin-left: 10rem;
+  }
+  
+  .breadcrumb-item {
+    margin-left: 5px;
+    font-weight: normal;
+  }
+  
+  .breadcrumb-link {
+    text-decoration: none;
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+  
+  .breadcrumb-link:hover {
+    color: #0aad0a;
+  }
+  
+  .breadcrumb-link.active {
+    font-weight: bold;
+    color: #0aad0a;
+  }

@@ -1,0 +1,62 @@
+.ads-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 50px;
+
+}
+
+.ad-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    height: 200px; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f6f6f6;
+    overflow: hidden;
+}
+
+.ad-content {
+    max-width: 200px;
+}
+
+.ad-content h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ad-content p {
+    font-size: 16px;
+    color: gray;
+    margin-bottom: 15px;
+}
+
+.shop-button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.shop-button:hover {
+    background-color: #333;
+}
+
+.ad-box img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin-left: auto; 
+}
+.img2{
+    width: 250px;
+    
+}

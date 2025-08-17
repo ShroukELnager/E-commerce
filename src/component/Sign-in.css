@@ -1,0 +1,100 @@
+.signin-container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    margin-right: 200px;
+
+  }
+  
+  .signin-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: -70px;
+  }
+  
+  .signin-image img {
+    max-width: 80%;
+    height: auto;
+  }
+  
+  .signin-form {
+    flex: 1;
+    max-width: 400px;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .signin-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .signin-form p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .signin-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .password-field {
+    position: relative;
+  }
+  
+  .password-field .eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .signin-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .signin-options input{
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    color: green;
+  }
+  
+  .forgot-password {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .reset-link {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .signin-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .signup-text {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .signup-text a{
+color:green}
+  
