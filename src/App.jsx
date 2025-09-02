@@ -5,7 +5,7 @@ import store from "./store/store";
 import AppRoutes from "./component/AppRoutes";
 import Cart from "./component/Cart.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "./component/Footer.jsx";
+import Footer from "./component/footer.jsx";
 export default function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
