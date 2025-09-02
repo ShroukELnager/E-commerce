@@ -5,7 +5,6 @@
     align-items: center;
     padding: 20px;
     margin-bottom: 50px;
-
 }
 
 .ad-box {
@@ -13,7 +12,7 @@
     align-items: center;
     justify-content: space-between;
     width: 500px;
-    height: 200px; 
+    height: 200px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -44,6 +43,7 @@
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .shop-button:hover {
@@ -54,9 +54,38 @@
     width: 150px;
     height: auto;
     object-fit: contain;
-    margin-left: auto; 
+    margin-left: auto;
 }
-.img2{
+
+.img2 {
     width: 250px;
-    
+}
+
+/* ✅ Responsive for small screens */
+@media (max-width: 768px) {
+    .ads-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ad-box {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ad-content {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .ad-box img {
+        width: 180px;
+        margin: 0 auto;
+    }
+
+    .img2 {
+        width: 220px;
+    }
 }

@@ -1,50 +1,45 @@
-import "./MultiSlider.css"; 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
-import { useState, useEffect } from "react";
+import './MultiSlider.css'
+import React, { useEffect, useState } from "react";
 
-const MultiSlider = () => {
-    const [images, setImages] = useState([]);
-    const [swiperInstance, setSwiperInstance] = useState(null);
+const categories = [
+  { img: "/assets/shop/image3.jpeg", label: "Dairy, Bread & Eggs" },
+  { img: "/assets/shop/image4.jpeg", label: "Snack & Munchies" },
+  { img: "/assets/shop/image5.jpeg", label: "Bakery & Biscuits" },
+  { img: "/assets/shop/image6.jpeg", label: "Instant Food" },
+  { img: "/assets/shop/image7.jpeg", label: "Tea, Coffee & Drinks" },
+  { img: "/assets/shop/image8.jpeg", label: "Atta, Rice & Dal" },
+  { img: "/assets/shop/image9.jpeg", label: "Baby Care" },
+  { img: "/assets/shop/image10.jpeg", label: "Chicken, Meat & Fish" },
+];
 
-    useEffect(() => {
-        const imageCount = 10; 
-        const imageList = Array.from({ length: imageCount }, (_, i) => `/assets/shop/image${i + 1}.jpeg`);
-        setImages(imageList);
-    }, []);
+export default function LoopingSlider() {
+  const [items, setItems] = useState(categories);
 
-    return (
-        <div className="category-slider-container">
-            <h2 className="category-slider-title">Featured Categories</h2>
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setItems((prev) => {
+        const updated = [...prev];
+        const first = updated.shift(); // احذف أول صورة
+        updated.push(first); // رجعها في الآخر
+        return updated;
+      });
+    }, 2000); // كل 2 ثانية
 
-            <Swiper
-                onSwiper={(swiper) => setSwiperInstance(swiper)}
-                slidesPerView={3}
-                spaceBetween={20}
-                autoplay={{ 
-                    delay: 1500, 
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: false 
-                }}
-                loop={true} 
-                modules={[Autoplay]}
-            >
-                {images.map((image, index) => (
-                    <SwiperSlide key={index}>
-                        <div 
-                            className="category-card"
-                            onMouseEnter={() => swiperInstance?.autoplay.stop()} 
-                            onMouseLeave={() => swiperInstance?.autoplay.start()} 
-                        >
-                            <img src={image} alt={`Product ${index + 1}`} className="category-image" />
-                        </div>
-                        <p className="category-text">Category {index + 1}</p>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </div>
-    );
-};
+    return () => clearInterval(interval);
+  }, []);
 
-export default MultiSlider;
+  return (
+    <div className="loopingSliderWrapper">
+      <h2 className="loopingSliderTitle">Featured Categories</h2>
+      <div className="loopingSliderTrack">
+        {items.slice(0, 4).map(({ img, label }, idx) => (
+          <div className="loopingSliderItem" key={idx}>
+            <img src={img} alt={label} />
+            <p>{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+

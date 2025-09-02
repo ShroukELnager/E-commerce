@@ -1,24 +1,25 @@
 import React from "react";
 import { LuClock3, LuGift, LuPackage, LuRotateCw } from "react-icons/lu";
-import './OurValues.css'
+import './OurValues.css';
+
 const features = [
   {
-    icon: <LuClock3 className="icon" style={{fontSize:'65px',color:'#0aad0a'}} />,
+    icon: <LuClock3 className="icon" style={{ fontSize: '65px', color: '#0aad0a' }} />,
     title: "10 Minute Grocery Now",
     description: "Get your order delivered to your doorstep at the earliest from FreshCart pickup stores near you.",
   },
   {
-    icon: <LuGift className="icon" style={{fontSize:'65px',color:'#0aad0a'}} />,
+    icon: <LuGift className="icon" style={{ fontSize: '65px', color: '#0aad0a' }} />,
     title: "Best Prices & Offers",
     description: "Cheaper prices than your local supermarket, great cashback offers to top it off. Get best prices & offers.",
   },
   {
-    icon: <LuPackage className="icon" style={{fontSize:'65px',color:'#0aad0a'}} />,
+    icon: <LuPackage className="icon" style={{ fontSize: '65px', color: '#0aad0a' }} />,
     title: "Wide Assortment",
     description: "Choose from 5000+ products across food, personal care, household, bakery, veg and non-veg & other categories.",
   },
   {
-    icon: <LuRotateCw className="icon" style={{fontSize:'65px',color:'#0aad0a'}} />,
+    icon: <LuRotateCw className="icon" style={{ fontSize: '65px', color: '#0aad0a' }} />,
     title: "Easy Returns",
     description: "Not satisfied with a product? Return it at the doorstep & get a refund within hours. No questions asked policy.",
   },

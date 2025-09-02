@@ -4,13 +4,14 @@ import instanceAxios from "./instanceAxios";
 import { FaHeart, FaEye, FaSyncAlt, FaCheck } from "react-icons/fa";
 import LensZoomEffect from "./modal.jsx";
 import { Tooltip, OverlayTrigger } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../store/slice.js";
 import { toggleWishlist } from "../store/wishlistSlice.js";
 import "./ShopGallery.css";
 
 const ShopGallery = () => {
   const dispatch = useDispatch();
+  const wishlist = useSelector((state) => state.wishlist.items); // Get wishlist items from redux
   const [products, setProducts] = useState([]);
   const [pagination, setPagination] = useState({ page: 1 });
   const [showModal, setShowModal] = useState(false);
@@ -34,11 +35,35 @@ const ShopGallery = () => {
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
+  const handleWishlistToggle = (product) => {
+    // Check if the product is already in the wishlist
+    const isInWishlist = wishlist.some((item) => item.id === product.id); 
+
+    if (isInWishlist) {
+      // If product is in wishlist, remove it
+      dispatch(toggleWishlist(product));  // Remove from wishlist
+      setAlertMessage("Product removed from wishlist");
+      setAlertColor("red");
+    } else {
+      // If product is not in wishlist, add it
+      dispatch(toggleWishlist(product));  // Add to wishlist
+      setAlertMessage("Product added to wishlist");
+      setAlertColor("green");
+    }
+
+    // Show alert for 3 seconds
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
+  };
+
   const handleCartToggle = (product) => {
     const isAdding = Math.random() > 0.5;
+
     if (isAdding) {
       dispatch(addToCart(product));
-      setAlertMessage("Product updated to cart");
+      setAlertMessage("Product added to cart");
       setAlertColor("green");
     } else {
       dispatch(removeFromCart(product));
@@ -47,14 +72,13 @@ const ShopGallery = () => {
     }
 
     setShowAlert(true);
-
     setTimeout(() => {
       setShowAlert(false);
     }, 3000);
   };
 
   return (
-    <div className="gallery-container">
+    <div className="zLm-gallery-container">
       {products.length > 0 &&
         products
           .slice((pagination.page - 1) * pageSize, pagination.page * pageSize)
@@ -62,24 +86,27 @@ const ShopGallery = () => {
             const globalIndex = (pagination.page - 1) * pageSize + index + 1;
             const productImage = `/assets/shop/image${globalIndex}.jpeg`;
 
+            // Ensure each product has a unique ID
+            const productWithId = { ...product, id: globalIndex };
+
             return (
-              <div key={product.id} className="gallery-item">
+              <div key={productWithId.id} className="pQt-gallery-item">
                 <img
                   src={productImage}
                   alt={product.title}
-                  className="product-image"
+                  className="nGp-product-image"
                   onError={(e) =>
                     (e.target.src = "/assets/shop/placeholder.jpg")
                   }
                 />
 
-                <div className="product-icons">
+                <div className="fRb-product-icons">
                   <OverlayTrigger
                     placement="top"
                     overlay={<Tooltip id="tooltip-top">Quick View</Tooltip>}
                   >
                     <FaEye
-                      className="icon"
+                      className="xYs-icon"
                       style={{ fontSize: "34px", cursor: "pointer" }}
                       onClick={() => {
                         setSelectedProduct(product);
@@ -93,13 +120,13 @@ const ShopGallery = () => {
                     overlay={<Tooltip id="tooltip-top">WishList</Tooltip>}
                   >
                     <FaHeart
-                      className="icon wishlist-icon"
+                      className="xYs-icon jKt-wishlist-icon"
                       style={{
                         fontSize: "34px",
                         cursor: "pointer",
-                        color: "green",
+                        color: wishlist.some((item) => item.id === productWithId.id) ? "green" : "gray", // Change color based on wishlist
                       }}
-                      onClick={() => dispatch(toggleWishlist(product))}
+                      onClick={() => handleWishlistToggle(productWithId)}
                     />
                   </OverlayTrigger>
 
@@ -107,17 +134,17 @@ const ShopGallery = () => {
                     placement="top"
                     overlay={<Tooltip id="tooltip-top">Compare</Tooltip>}
                   >
-                    <FaSyncAlt className="icon" style={{ fontSize: "34px" }} />
+                    <FaSyncAlt className="xYs-icon" style={{ fontSize: "34px" }} />
                   </OverlayTrigger>
                 </div>
 
-                <p className="product-category">{product.category}</p>
-                <h4 className="product-title">{product.title}</h4>
-                <p className="product-price">${product.price}</p>
+                <p className="yGl-product-category">{product.category}</p>
+                <h4 className="mPs-product-title">{product.title}</h4>
+                <p className="vRk-product-price">${product.price}</p>
 
                 <button
-                  className="add-button"
-                  onClick={() => handleCartToggle(product)}
+                  className="lWn-add-button"
+                  onClick={() => handleCartToggle(productWithId)}
                 >
                   + Add
                 </button>
@@ -125,14 +152,14 @@ const ShopGallery = () => {
             );
           })}
 
-      <div className="pagination-container">
+      <div className="fYd-pagination-container">
         <Pagination
           count={totalPages}
           page={pagination.page}
           onChange={(event, page) => setPagination({ page })}
           variant="outlined"
           shape="rounded"
-          className="custom-pagination"
+          className="rXa-custom-pagination"
         />
       </div>
 
@@ -142,7 +169,7 @@ const ShopGallery = () => {
 
       {showAlert && (
         <div
-          className="custom-alert"
+          className="hNs-custom-alert"
           style={{
             position: "fixed",
             bottom: "20px",

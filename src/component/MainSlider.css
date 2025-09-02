@@ -1,0 +1,45 @@
+.main-slider {
+  width: 100%;
+  max-width: 1200px; /* تحكم في عرض السلايدر */
+  margin: 0 auto;     /* يخليه في النص */
+  padding: 0 40px;    /* مسافة من اليمين والشمال */
+  box-sizing: border-box;
+  height: 600px;
+  overflow: hidden;
+position: relative;
+}
+
+
+.slide-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background-color: #f5f7f9;
+  border-radius: 10px;
+  height: 100%;
+}
+
+/* يمكنك تخصيص بعض الألوان حسب نوع السلايد */
+.hero-slide {
+  background-color: #eaf3ed;
+}
+
+.shipping-slide {
+  background-color: #f5f7f9;
+}
+.swiper-slide {
+  position: relative;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none; /* لمنع التفاعل مع السلايدات غير النشطة */
+}
+
+.swiper-slide-active {
+  opacity: 1 !important;
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+}

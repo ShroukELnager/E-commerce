@@ -1,83 +1,149 @@
 .wishlist-container {
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-  }
-  
-  .empty-message {
-    font-size: 18px;
-    color: gray;
-    text-align: center;
-  }
-  
-  .wishlist-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .wishlist-table th, .wishlist-table td {
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .wishlist-table th {
-    background: #f8f8f8;
-  }
-  
-  .product-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .product-info img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  .in-stock {
-    color: green;
-    font-weight: bold;
-  }
-  
-  .out-of-stock {
-    color: red;
-    font-weight: bold;
-  }
-  
-  .add-to-cart {
-    background: green;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .contact-us {
-    background: navy;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .delete-icon {
-    color: red;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .buy-now {
-    display: block;
-    width: 200px;
-    margin: 20px auto;
-    background: black;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-  }
-  
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.empty-message {
+  font-size: 18px;
+  color: gray;
+  text-align: center;
+}
+
+.wishlist-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.wishlist-table th, .wishlist-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.wishlist-table th {
+  background: #f8f8f8;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+}
+
+.product-info img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.in-stock {
+  color: green;
+  font-weight: bold;
+}
+
+.out-of-stock {
+  color: red;
+  font-weight: bold;
+}
+
+.add-to-cart {
+  background: green;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-us {
+  background: navy;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-icon {
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.buy-now {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  background: black;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* Custom Toast (Alert) */
+.wishlist-alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.wishlist-alert .MdDelete {
+  width: 24px;
+  height: 24px;
+  background-color: green;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+/* ShopGallery.css */
+
+.hNs-custom-alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid green;
+}
+
+.wishlist-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wishlist-toast.green {
+  background-color: lightgreen;
+}
+
+.wishlist-toast.red {
+  background-color: lightcoral;
+}

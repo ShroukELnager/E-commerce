@@ -1,0 +1,54 @@
+.shipping-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  font-family: sans-serif;
+  border-radius: 10px;
+}
+
+.text-content {
+  max-width: 500px;
+}
+
+.highlight-badge {
+  background-color: #ffe100;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.green-text {
+  color: #22c55e;
+}
+
+p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.image-content .veg-image {
+  width: 400px;
+  border-radius: 10px;
+}

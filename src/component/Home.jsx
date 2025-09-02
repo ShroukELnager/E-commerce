@@ -8,18 +8,11 @@ import FeaturesSection from './OurValues.jsx';
 import ShopGallery from './shopGallary.jsx'
 import BestSellers from './BestSellers.jsx'
 import MultiSlider from './MultiSlider.jsx'
+import MainSlider from './MainSlider.jsx';
 export default function Home() {
   return (<>
     <div className='slider-container'> 
-      <Carousel data-bs-theme="dark" indicators={false} controls={false}>
-        <Carousel.Item>
-          <img className="custom-slider-img" src={slider1} alt="First slide" />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className="custom-slider-img" src={slider2} alt="Second slide" />
-        </Carousel.Item>
-      </Carousel>
+     <MainSlider />
 
     </div>
 
