@@ -3,7 +3,7 @@ import Pagination from "@mui/material/Pagination";
 import instanceAxios from "./instanceAxios";
 import { FaHeart, FaEye, FaSyncAlt, FaCheck } from "react-icons/fa";
 import LensZoomEffect from "./modal.jsx";
-import { Tooltip, OverlayTrigger } from "react-bootstrap";
+import { Tooltip, OverlayTrigger } from "react-bootstrap"; // استيراد Tooltip و OverlayTrigger من react-bootstrap
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../store/slice.js";
 import { toggleWishlist } from "../store/wishlistSlice.js";
@@ -95,12 +95,11 @@ const ShopGallery = () => {
                   src={productImage}
                   alt={product.title}
                   className="nGp-product-image"
-                  onError={(e) =>
-                    (e.target.src = "/assets/shop/placeholder.jpg")
-                  }
+                  onError={(e) => (e.target.src = "/assets/shop/placeholder.jpg")}
                 />
 
                 <div className="fRb-product-icons">
+                  {/* استخدم Tooltip من react-bootstrap */}
                   <OverlayTrigger
                     placement="top"
                     overlay={<Tooltip id="tooltip-top">Quick View</Tooltip>}
@@ -124,7 +123,9 @@ const ShopGallery = () => {
                       style={{
                         fontSize: "38px",
                         cursor: "pointer",
-                        color: wishlist.some((item) => item.id === productWithId.id) ? "green" : "gray", // Change color based on wishlist
+                        color: wishlist.some((item) => item.id === productWithId.id)
+                          ? "green"
+                          : "gray", // تغيير اللون بناءً على حالة المنتج في قائمة الرغبات
                       }}
                       onClick={() => handleWishlistToggle(productWithId)}
                     />
@@ -134,7 +135,10 @@ const ShopGallery = () => {
                     placement="top"
                     overlay={<Tooltip id="tooltip-top">Compare</Tooltip>}
                   >
-                    <FaSyncAlt className="xYs-icon" style={{ fontSize: "38px" }} />
+                    <FaSyncAlt
+                      className="xYs-icon"
+                      style={{ fontSize: "38px" }}
+                    />
                   </OverlayTrigger>
                 </div>
 

@@ -50,20 +50,20 @@ export default function Header() {
         <div className="icons">
           <Link to='/wishlist'>
             <div className="icon-wrapper">
-              <MdFavoriteBorder className="icon" style={{ fontSize: '28px' }} />
+              <MdFavoriteBorder className="icon" style={{ fontSize: '24px' }} />
               {wishlistCount > 0 && <span className="badge">{wishlistCount}</span>}
             </div>
           </Link>
 
           <div className="icon-wrapper">
-            <CiUser className="icon" style={{ fontSize: '28px' }} onClick={() => setOpen(true)} />
+            <CiUser className="icon" style={{ fontSize: '24px' }} onClick={() => setOpen(true)} />
             <SignupModal open={open} handleClose={() => setOpen(false)} />
           </div>
 
           <div className="icon-wrapper">
             <IoBagOutline
               className="icon"
-              style={{ fontSize: '26px', cursor: 'pointer' }}
+              style={{ fontSize: '22px', cursor: 'pointer' }}
               onClick={() => setIsCartOpen(!isCartOpen)}
             />
             {totalItems > 0 && <span className="badge">{totalItems}</span>}
