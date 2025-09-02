@@ -28,7 +28,7 @@ export default function Cart({ isCartOpen, setIsCartOpen }) {
 
         <div className="cart-body">
           {cartItems.length === 0 ? (
-            <>
+            <div className="empty-cart-container">
               <h1>Oops!</h1>
               <p>Your cart is empty</p>
               <button
@@ -40,7 +40,7 @@ export default function Cart({ isCartOpen, setIsCartOpen }) {
               >
                 Shop Now
               </button>
-            </>
+            </div>
           ) : (
             <ul className="cart-items">
               {cartItems.map((item) => (

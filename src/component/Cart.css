@@ -21,9 +21,8 @@
     position: relative;
     box-shadow: -4px 0px 10px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
-    z-index: 10000; 
+    z-index: 10000;
 }
-
 
 .cart-header {
     display: flex;
@@ -64,12 +63,16 @@
 .cart-body {
     flex: 1;
     overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .cart-items {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
 }
 
 .cart-item {
@@ -77,6 +80,7 @@
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px solid #ddd;
+    width: 100%;
 }
 
 .cart-item img {
@@ -134,12 +138,7 @@
 .remove-btn i {
     margin-right: 5px;
 }
-.cart-body
-{   padding:0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+
 .empty-cart-container {
     display: flex;
     flex-direction: column;
@@ -175,9 +174,6 @@
 .shop-now-btn:hover {
     background-color: #218838;
 }
-
-
-
 
 .cart-buttons {
     position: absolute;
@@ -215,4 +211,50 @@
 
 .checkout:hover {
     background: #333;
+}
+
+/* استعلامات الوسائط لجعل التصميم ريسبونسيڤ */
+@media screen and (max-width: 450px) {
+    .cart-container {
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+    }
+
+    .cart-header {
+        font-size: 18px;
+    }
+
+    .cart-body {
+        padding: 0;
+    }
+
+    .cart-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cart-item-details h4 {
+        font-size: 14px;
+    }
+
+    .cart-item-details p {
+        font-size: 12px;
+    }
+
+    .quantity button {
+        font-size: 14px;
+    }
+
+    .quantity span {
+        font-size: 14px;
+    }
+
+    .remove-btn {
+        font-size: 12px;
+    }
+
+    .cart-buttons button {
+        font-size: 14px;
+    }
 }
