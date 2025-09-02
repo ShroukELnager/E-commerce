@@ -107,7 +107,7 @@ const ShopGallery = () => {
                   >
                     <FaEye
                       className="xYs-icon"
-                      style={{ fontSize: "34px", cursor: "pointer" }}
+                      style={{ fontSize: "38px", cursor: "pointer" }}
                       onClick={() => {
                         setSelectedProduct(product);
                         setShowModal(true);
@@ -122,7 +122,7 @@ const ShopGallery = () => {
                     <FaHeart
                       className="xYs-icon jKt-wishlist-icon"
                       style={{
-                        fontSize: "34px",
+                        fontSize: "38px",
                         cursor: "pointer",
                         color: wishlist.some((item) => item.id === productWithId.id) ? "green" : "gray", // Change color based on wishlist
                       }}
@@ -134,7 +134,7 @@ const ShopGallery = () => {
                     placement="top"
                     overlay={<Tooltip id="tooltip-top">Compare</Tooltip>}
                   >
-                    <FaSyncAlt className="xYs-icon" style={{ fontSize: "34px" }} />
+                    <FaSyncAlt className="xYs-icon" style={{ fontSize: "38px" }} />
                   </OverlayTrigger>
                 </div>
 
